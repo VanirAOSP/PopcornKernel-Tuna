@@ -351,8 +351,8 @@ MODFLAGS = -DMODULE -fgcse -fsingle-precision-constant -mtune=cortex-a8 -march=a
 CFLAGS_MODULE = $(MODFLAGS)
 AFLAGS_MODULE = $(MODFLAGS)
 LDFLAGS_MODULE = -T $(srctree)/scripts/module-common.lds
-CFLAGS_KERNEL = -fgcse -fsingle-precision-constant -mtune=cortex-a8 -march=armv7-a -mfpu=neon -ftree-vectorize -pipe
-AFLAGS_KERNEL = -fgcse -fsingle-precision-constant -mtune=cortex-a8 -march=armv7-a -mfpu=neon -ftree-vectorize
+CFLAGS_KERNEL = -fgcse -fsingle-precision-constant -mtune=cortex-a9 -march=armv7-a -mfpu=neon -ftree-vectorize -pipe
+AFLAGS_KERNEL = -fgcse -fsingle-precision-constant -mtune=cortex-a9 -march=armv7-a -mfpu=neon -ftree-vectorize
 CFLAGS_GCOV = -fprofile-arcs -ftest-coverage
 
 # Use LINUXINCLUDE when you must reference the include/ directory.
@@ -366,7 +366,7 @@ KBUILD_CPPFLAGS := -D__KERNEL__
 
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
-                   -mno-unaligned-access \
+           -mno-unaligned-access \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -fmodulo-sched -fmodulo-sched-allow-regmoves \
